@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "check-types": "tsc --pretty --noEmit",
+    "types": "tsc --pretty --noEmit",
     "eslint": "eslint \"**/*.+(js|jsx|ts|tsx)\"",
     "eslint:fix": "eslint --fix \"**/*.+(js|jsx|ts|tsx)\"",
     "prettier": "prettier --check \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|md|css)\"",
@@ -39,6 +39,7 @@
   },
   "lint-staged": {
     "./*/**/*.{js,jsx,ts,tsx}": [
+      "npm run types",
       "npm run prettier:fix",
       "npm run eslint:fix"
     ],
