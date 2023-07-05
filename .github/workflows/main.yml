@@ -10,8 +10,10 @@ jobs:
   ci:
     name: Check codebase
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: Install packages
         run: npm i
       - name: Check types
