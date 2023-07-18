@@ -1,20 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ALT Tutors - Next.js Project
+
+ALT Tutors website built with Next.js 13, React, Tailwind CSS, Prisma, NextAuth.
+
+## Prerequisites
+
+The team mainly uses VS Code as the source-code editor together with the following extensions installed:
+
+- Prettier
+- ESLint
+- Figma for VSCode
+- Git Graph
+- Prisma
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the web app.
+
+```bash
+git clone https://github.com/ubergonmx/alt-tutors.git
+```
+
+2. In the project folder, install the packages.
+
+```bash
+npm i
+```
+
+3. Initialize `husky`. Make sure [git](https://git-scm.com/downloads) is installed.
+
+```bash
+npm run
+```
+
+4. Run the web app. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Links
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [ALT Tutors Docs](https://alt-tutors-docs.vercel.app/)
+- [Jira Board](https://alt-ahead.atlassian.net/jira/software/projects/ALT/boards/1)
+
+## Font
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
