@@ -10,6 +10,6 @@
   "git.suggestSmartCommit": false,
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma",
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   }
 }
