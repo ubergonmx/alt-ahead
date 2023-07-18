@@ -1,4 +1,4 @@
-name: CI
+name: Code Quality Checks
 on:
   push:
     branches:
@@ -8,7 +8,7 @@ on:
       - main
 jobs:
   ci:
-    name: Check codebase
+    name: Check types, format, and lint
     runs-on: ubuntu-latest
 
     steps:

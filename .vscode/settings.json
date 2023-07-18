@@ -5,5 +5,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.fixAll.format": true
-  }
+  },
+  "git.enableSmartCommit": false,
+  "git.suggestSmartCommit": false
 }
