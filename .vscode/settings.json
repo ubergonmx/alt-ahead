@@ -7,5 +7,9 @@
     "source.fixAll.format": true
   },
   "git.enableSmartCommit": false,
-  "git.suggestSmartCommit": false
+  "git.suggestSmartCommit": false,
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma",
+    "editor.formatOnSave": false
+  }
 }
