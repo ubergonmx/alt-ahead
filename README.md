@@ -29,7 +29,7 @@ npm i
 3. Initialize `husky`. Make sure [git](https://git-scm.com/downloads) is installed.
 
 ```bash
-npm run
+npm run prepare
 ```
 
 4. Run the web app. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
