@@ -12,7 +12,8 @@
     "prettier": "prettier --check \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|md|css)\"",
     "prettier:fix": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|md|css)\"",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "clean-local": "npx git-removed-branches --prune"
   },
   "dependencies": {
     "@types/node": "20.3.3",
