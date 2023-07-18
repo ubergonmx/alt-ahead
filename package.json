@@ -16,6 +16,7 @@
     "clean-local": "npx git-removed-branches --prune"
   },
   "dependencies": {
+    "@prisma/client": "^5.0.0",
     "@tanstack/react-query": "^4.29.25",
     "@total-typescript/ts-reset": "^0.4.2",
     "@types/node": "20.3.3",
@@ -26,6 +27,7 @@
     "axios": "^1.4.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "date-fns": "^2.30.0",
     "eslint-config-next": "13.4.8",
     "lucide-react": "^0.261.0",
     "next": "13.4.8",
