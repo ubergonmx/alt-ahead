@@ -60,12 +60,12 @@
     "prettier": "2.8.8"
   },
   "lint-staged": {
-    "./*/**/*.{js,jsx,ts,tsx}": [
-      "npm run prettier:fix",
-      "npm run eslint:fix"
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --cache --fix"
     ],
     "*.{json,md}": [
-      "npm run prettier:fix"
+      "prettier --write"
     ]
   }
 }
