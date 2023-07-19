@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "alfredbirk.tailwind-documentation",
+    "bradlc.vscode-tailwindcss",
+    "stivo.tailwind-fold",
+    "prisma.prisma",
+    "figma.figma-vscode-extension",
+    "mhutchie.git-graph"
+  ]
+}
