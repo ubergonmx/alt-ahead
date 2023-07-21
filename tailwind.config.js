@@ -51,18 +51,18 @@ module.exports = {
           foreground: 'hsl(var(--card-foreground))',
         },
         'dark-blue': {
-          primary: '#1A0B42',
-          DEFAULT: '#8F87A2',
+          DEFAULT: '#1A0B42',
+          medium: '#8F87A2',
           light: '#ECEBEF',
         },
         'blue-green': {
-          primary: '#66CDCB',
-          DEFAULT: '#B4E6E6',
+          DEFAULT: '#66CDCB',
+          medium: '#B4E6E6',
           light: '#F2FBFB',
         },
         blue: {
-          primary: '#3332CC',
-          DEFAULT: '#9B9BE6',
+          DEFAULT: '#3332CC',
+          medium: '#9B9BE6',
           light: '#EEEEFB',
         },
         neutrals: {
@@ -73,13 +73,13 @@ module.exports = {
           black: '#141515',
         },
         'yellow-orange': {
-          primary: '#F6CA83',
-          DEFAULT: '#FAE0B6',
+          DEFAULT: '#F6CA83',
+          medium: '#FAE0B6',
           light: '#FEFBF5',
         },
         red: {
-          primary: '#FF715B',
-          DEFAULT: '#FFB9AF',
+          DEFAULT: '#FF715B',
+          medium: '#FFB9AF',
           light: '#FFF3F1',
         },
       },
