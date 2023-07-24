@@ -34,6 +34,32 @@
     --ring: 215 20.2% 65.1%;
 
     --radius: 0.5rem;
+
+    --dark-blue-primary: #1a0b42;
+    --dark-blue-medium: #8f87a2;
+    --dark-blue-light: #ecebef;
+
+    --blue-green-primary: #66cdcb;
+    --blue-green-medium: #b4e6e6;
+    --blue-green-light: #f2fbfb;
+
+    --blue-primary: #3332cc;
+    --blue-medium: #9b9be6;
+    --blue-light: #eeeefb;
+
+    --neutrals-lightest: #f4f4f4;
+    --neutrals-light: #e6e7e7;
+    --neutrals-primary: #bcbebe;
+    --neutrals-gray: #777b7b;
+    --neutrals-black: #141515;
+
+    --yellow-orange-primary: #f6ca83;
+    --yellow-orange-medium: #fae0b6;
+    --yellow-orange-light: #fefbf5;
+
+    --red-primary: #ff715b;
+    --red-medium: #ffb9af;
+    --red-light: #fff3f1;
   }
 
   .dark {
