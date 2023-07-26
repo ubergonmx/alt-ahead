@@ -9,13 +9,13 @@ datasource db {
 }
 
 model Account {
-  accountId          String    @id @default(cuid()) @map("account_id")
-  userId             String    @map("user_id")
-  providerType       String    @map("provider_type")
-  providerId         String    @map("provider_id")
-  providerAccountId  String    @map("provider_account_id")
-  refreshToken       String?   @map("refresh_token")
-  accessToken        String?   @map("access_token")
+  accountId          String    @id @default(cuid()) @map("account_id") @db.VarChar(50)
+  userId             String    @map("user_id") @db.VarChar(50)
+  providerType       String    @map("provider_type") @db.VarChar(50)
+  providerId         String    @map("provider_id") @db.VarChar(50)
+  providerAccountId  String    @map("provider_account_id") @db.VarChar(50)
+  refreshToken       String?   @map("refresh_token") @db.VarChar(50)
+  accessToken        String?   @map("access_token") @db.VarChar(50)
   accessTokenExpires DateTime? @map("access_token_expires")
   createdAt          DateTime  @default(now()) @map("created_at")
   updatedAt          DateTime  @updatedAt @map("updated_at")
@@ -27,11 +27,11 @@ model Account {
 }
 
 model Session {
-  sessionId    String   @id @default(cuid()) @map("session_id")
-  userId       String   @map("user_id")
+  sessionId    String   @id @default(cuid()) @map("session_id") @db.VarChar(50)
+  userId       String   @map("user_id") @db.VarChar(50)
   expires      DateTime @map("expires")
-  sessionToken String   @unique @map("session_token")
-  accessToken  String   @unique @map("access_token")
+  sessionToken String   @unique @map("session_token") @db.VarChar(50)
+  accessToken  String   @unique @map("access_token") @db.VarChar(50)
   createdAt    DateTime @default(now()) @map("created_at")
   updatedAt    DateTime @updatedAt @map("updated_at")
   users        User     @relation(fields: [userId], references: [userId])
@@ -41,9 +41,9 @@ model Session {
 }
 
 model VerificationRequest {
-  verificationId String   @id @default(cuid()) @map("verification_id")
-  identifier     String   @map("identifier")
-  token          String   @unique @map("token")
+  verificationId String   @id @default(cuid()) @map("verification_id") @db.VarChar(50)
+  identifier     String   @map("identifier") @db.VarChar(225)
+  token          String   @unique @map("token") @db.VarChar(225)
   expires        DateTime @map("expires")
   createdAt      DateTime @default(now()) @map("created_at")
   updatedAt      DateTime @updatedAt @map("updated_at")
@@ -53,16 +53,16 @@ model VerificationRequest {
 }
 
 model User {
-  userId          String         @id @map("user_id")
-  firstName       String         @map("first_name")
-  lastName        String         @map("last_name")
+  userId          String         @id @map("user_id") @db.VarChar(50)
+  firstName       String         @map("first_name") @db.VarChar(50)
+  lastName        String         @map("last_name") @db.VarChar(50)
   title           Title          @map("title")
   gender          Gender?        @map("gender")
-  email           String         @unique @map("email")
+  email           String         @unique @map("email") @db.VarChar(100)
   emailVerifiedAt DateTime?      @map("email_verified_at")
-  password        String         @map("password")
+  password        String         @map("password") @db.VarChar(255)
   role            Role           @map("role")
-  image           String?        @map("image")
+  image           String?        @map("image") @db.VarChar(255)
   deletedAt       DateTime?      @map("deleted_at")
   createdAt       DateTime       @default(now()) @map("created_at")
   updatedAt       DateTime       @updatedAt @map("updated_at")
@@ -77,11 +77,11 @@ model User {
 
 model UsersAddress {
   addressId  Int      @id @default(autoincrement()) @map("address_id")
-  userId     String   @map("user_id")
-  address    String   @map("address")
-  city       String   @map("city")
-  country    String   @map("country")
-  postalCode String   @map("postal_code")
+  userId     String   @map("user_id") @db.VarChar(50)
+  address    String   @map("address") @db.VarChar(100)
+  city       String   @map("city") @db.VarChar(50)
+  country    String   @map("country") @db.VarChar(50)
+  postalCode String   @map("postal_code") @db.VarChar(20)
   createdAt  DateTime @default(now()) @map("created_at")
   updatedAt  DateTime @updatedAt @map("updated_at")
   users      User     @relation(fields: [userId], references: [userId])
@@ -92,7 +92,7 @@ model UsersAddress {
 
 model Category {
   categoryId   Int       @id @default(autoincrement()) @map("category_id")
-  categoryName String    @map("category_name")
+  categoryName String    @map("category_name") @db.VarChar(50)
   subjects     Subject[]
 
   @@map("categories")
@@ -100,7 +100,7 @@ model Category {
 
 model Subject {
   subjectId       Int              @id @default(autoincrement()) @map("subject_id")
-  subjectName     String           @map("subject_name")
+  subjectName     String           @map("subject_name") @db.VarChar(50)
   categoryId      Int              @map("category_id")
   categories      Category         @relation(fields: [categoryId], references: [categoryId])
   tutorSubjects   TutorSubject[]
@@ -113,10 +113,9 @@ model Subject {
 
 model Tutor {
   tutorId           Int                 @id @map("tutor_id")
-  userId            String              @map("user_id")
-  aboutMe           String?             @map("about_me")
-  verified          Boolean             @default(false) @map("verified")
-  deleted           Boolean             @default(false) @map("deleted")
+  userId            String              @map("user_id") @db.VarChar(50)
+  aboutMe           String?             @map("about_me") @db.VarChar(255)
+  verifiedAt        Boolean             @default(false) @map("verified_at")
   createdAt         DateTime            @default(now()) @map("created_at")
   updatedAt         DateTime            @updatedAt @map("updated_at")
   user              User                @relation(fields: [userId], references: [userId])
@@ -146,10 +145,10 @@ model TutorAvailability {
 model TutorEducation {
   educationId Int      @id @default(autoincrement()) @map("education_id")
   tutorId     Int      @map("tutor_id")
-  school      String   @map("school")
-  degree      String   @map("degree")
-  city        String   @map("city")
-  country     String   @map("country")
+  school      String   @map("school") @db.VarChar(100)
+  degree      String   @map("degree") @db.VarChar(100)
+  city        String   @map("city") @db.VarChar(50)
+  country     String   @map("country") @db.VarChar(50)
   startDate   DateTime @map("start_date")
   endDate     DateTime @map("end_date")
   createdAt   DateTime @default(now()) @map("created_at")
@@ -163,7 +162,7 @@ model TutorEducation {
 model TutorVideo {
   videoId   Int    @id @default(autoincrement()) @map("video_id")
   tutorId   Int    @map("tutor_id")
-  videoLink String @map("video_link")
+  videoLink String @map("video_link") @db.VarChar(255)
   tutors    Tutor  @relation(fields: [tutorId], references: [tutorId])
 
   @@index([tutorId])
@@ -186,7 +185,7 @@ model TutorSubject {
 
 model Student {
   studentId Int              @id @map("student_id")
-  userId    String           @map("user_id")
+  userId    String           @map("user_id") @db.VarChar(50)
   createdAt DateTime         @default(now()) @map("created_at")
   updatedAt DateTime         @updatedAt @map("updated_at")
   users     User             @relation(fields: [userId], references: [userId])
@@ -233,7 +232,7 @@ model Review {
   tutorId   Int      @map("tutor_id")
   studentId Int      @map("student_id")
   rating    Int      @map("rating")
-  comment   String   @map("comment")
+  comment   String   @map("comment") @db.VarChar(255)
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
   tutors    Tutor    @relation(fields: [tutorId], references: [tutorId])
