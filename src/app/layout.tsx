@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import { cn } from '@/lib/utils'
 import '@/styles/globals.css'
@@ -14,11 +15,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={cn('bg-neutrals-light text-neutrals-black antialiased light', poppins.className)}
+      className={cn('light bg-neutrals-light text-neutrals-black antialiased', poppins.className)}
     >
-      <body className="min-h-screen pt-12 bg-slate-50 antialiased">
+      <body className="min-h-screen bg-slate-50 pt-12 antialiased">
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   )
