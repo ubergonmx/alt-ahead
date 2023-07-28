@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-const current_year = new Date().getFullYear()
+const currentYear = new Date().getFullYear()
 const Footer = () => {
   return (
     <footer className="bg-neutrals-lightest p-20">
@@ -56,7 +56,7 @@ const Footer = () => {
         </div>
 
         <div className="flex justify-between border-t border-t-neutrals-black pt-6 text-neutrals-gray">
-          <div className="flex flex-row space-x-4">Copyright © {current_year} ALT Tutors</div>
+          <div className="flex flex-row space-x-4">Copyright © {currentYear} ALT Tutors</div>
           <ul className="flex list-inside list-disc gap-4">
             <li className="list-none">
               <Link href="/">Site Notice</Link>
