@@ -4,53 +4,70 @@ import Image from 'next/image'
 const current_year = new Date().getFullYear()
 const Footer = () => {
   return (
-    <footer>
-      <div>
-        <Image src="/alt-tutors.png" alt="dunno" width={156} height={63} />
-        <div className="flex-column flex space-x-5">
-          <p>Your ultimate destination for connecting students with qualified tutors</p>
-          <div>
-            <div>icon 1</div>
-            <div>icon 2</div>
-            <div>icon 3</div>
+    <footer className="bg-neutrals-lightest p-20">
+      <div className="container">
+        <div className="mb-10 flex justify-between gap-16">
+          <div className="flex flex-col gap-4">
+            <Image src="/alt-tutors.png" alt="dunno" width={156} height={63} />
+            <p className="max-w-[30vw]">
+              Your ultimate destination for connecting students with qualified tutors
+            </p>
+            <div className="flex gap-4">
+              <div className="h-10 w-10 rounded-full bg-red pt-2 text-center">✔</div>
+              <div className="h-10 w-10 rounded-full bg-red pt-2 text-center">❤</div>
+              <div className="h-10 w-10 rounded-full bg-red pt-2 text-center">🤣</div>
+            </div>
           </div>
-          <div>
-            <div>
-              <p> Tutors </p>
-              <div>
-                <Link href="/"> Dashboard </Link>
-                <Link href="/"> Calendar </Link>
+
+          <div className="flex gap-4">
+            <div className="min-w-[125px] p-4">
+              <p className="mb-3 text-xl font-extrabold">Tutors</p>
+              <div className="flex flex-col text-neutrals-gray">
+                <Link href="/">Dashboard</Link>
+                <Link href="/">Calendar</Link>
               </div>
             </div>
-            <div>
-              <p> Students </p>
-              <div>
-                <Link href="/"> Calendar </Link>
-                <Link href="/"> Dashboard </Link>
+
+            <div className="min-w-[125px] p-4">
+              <p className="mb-3 text-xl font-extrabold">Students</p>
+              <div className="flex flex-col text-neutrals-gray">
+                <Link href="/">Calendar</Link>
+                <Link href="/">Dashboard</Link>
               </div>
             </div>
-            <div>
-              <p> Company </p>
-              <div>
-                <Link href="/"> About Us </Link>
-                <Link href="/"> Career </Link>
-                <Link href="/"> Contact Us </Link>
+
+            <div className="min-w-[125px] p-4">
+              <p className="mb-3 text-xl font-extrabold">Company</p>
+              <div className="flex flex-col text-neutrals-gray">
+                <Link href="/">About Us</Link>
+                <Link href="/">Career</Link>
+                <Link href="/">Contact Us</Link>
               </div>
             </div>
-            <div>
-              <p> Information </p>
-              <div>
-                <Link href="/"> FAQ </Link>
-                <Link href="/"> Support </Link>
+
+            <div className="min-w-[125px] p-4">
+              <p className="mb-3 text-xl font-extrabold">Information</p>
+              <div className="flex flex-col text-neutrals-gray">
+                <Link href="/">FAQ</Link>
+                <Link href="/">Support</Link>
               </div>
             </div>
           </div>
         </div>
-        <div className="flex flex-row space-x-4">Copyright © {current_year} ALT Tutors</div>
-        <div>
-          <Link href="/"> • Site Notice </Link>
-          <Link href="/"> • Privacy Policy</Link>
-          <Link href="/"> Terms of Service </Link>
+
+        <div className="flex justify-between border-t border-t-neutrals-black pt-6 text-neutrals-gray">
+          <div className="flex flex-row space-x-4">Copyright © {current_year} ALT Tutors</div>
+          <ul className="flex list-inside list-disc gap-4">
+            <li className="list-none">
+              <Link href="/">Site Notice</Link>
+            </li>
+            <li>
+              <Link href="/">Privacy Policy</Link>
+            </li>
+            <li>
+              <Link href="/">Terms of Service</Link>
+            </li>
+          </ul>
         </div>
       </div>
     </footer>
