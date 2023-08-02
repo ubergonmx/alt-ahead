@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import { Toaster } from '@/components/ui/Toaster'
 import { cn } from '@/lib/utils'
@@ -20,8 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen bg-slate-50 pt-12 antialiased">
         <Navbar />
         {children}
-
-        <Toaster />
+        <Footer />
       </body>
     </html>
   )
