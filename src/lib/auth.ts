@@ -34,7 +34,7 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token, user }) {
       const dbUser = await db.user.findFirst({
         where: {
-          email: token.email as any,
+          email: token.email,
         },
       })
 
@@ -43,16 +43,16 @@ export const authOptions: NextAuthOptions = {
         return token
       }
 
-      // if (!dbUser.username) {
-      //   await db.user.update({
-      //     where: {
-      //       id: dbUser.id,
-      //     },
-      //     data: {
-      //       username: nanoid(10),
-      //     },
-      //   })
-      // }
+      if (!dbUser.username) {
+        await db.user.update({
+          where: {
+            userId: dbUser.userId,
+          },
+          data: {
+            username: nanoid(10),
+          },
+        })
+      }
 
       return {
         id: dbUser.userId,
@@ -60,7 +60,7 @@ export const authOptions: NextAuthOptions = {
         lastName: dbUser.lastName,
         email: dbUser.email,
         picture: dbUser.image,
-        // username: dbUser.username,
+        username: dbUser.username,
       }
     },
     redirect() {
