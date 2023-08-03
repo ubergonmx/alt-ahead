@@ -27,8 +27,7 @@ const SignIn = () => {
                 alt="dunno"
                 width={250}
                 height={250}
-                className="mx-auto"
-                style={{ paddingTop: '50px' }}
+                className="mx-auto pt-12"
               />
             </Link>
             <h1 className="pt-9 text-4xl font-black">Welcome back!</h1>
