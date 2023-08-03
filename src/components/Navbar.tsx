@@ -9,16 +9,16 @@ const Navbar = () => {
         <Link href="/" className="flex items-center gap-2">
           <Image src="/alt-tutors.png" alt="dunno" width={100} height={100} />
         </Link>
-        <div style={{ marginLeft: 180 }}>
-          <Link href="/" style={{ marginRight: 20 }}>
+        <div className="ml-44">
+          <Link href="/" className="mr-5">
             Home
           </Link>
-          <Link href="/" style={{ marginRight: 20 }}>
+          <Link href="/" className="mr-5">
             Tutors
           </Link>
           <Link href="/">About us</Link>
         </div>
-        <div style={{ float: 'right' }}>
+        <div className="float-right">
           <Link href="/sign-in" className={buttonVariants({ variant: 'secondary' })}>
             Log In
           </Link>

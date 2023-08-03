@@ -5,13 +5,7 @@ import '../styles/globals.css'
 
 const SignIn = () => {
   return (
-    <div
-      className="mx-12"
-      style={{
-        display: 'flex',
-        flexDirection: 'row',
-      }}
-    >
+    <div className="mx-12 flex flex-row">
       {/*image <div>*/}
       <div className=" hidden lg:block ">
         <Image

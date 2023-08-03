@@ -32,43 +32,31 @@ const UserAuthForm: FC<UserAuthFormProps> = ({ className, ...props }) => {
   }
 
   return (
-    <div
-      className={cn('flex justify-center', className)}
-      {...props}
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-      }}
-    >
+    <div className={cn('flex flex-col justify-center', className)} {...props}>
       <label>
         <input
-          className={buttonVariants({ variant: 'secondary' })}
-          style={{ margin: '5px', borderColor: '#777B7B', width: '320px' }}
+          className={cn(buttonVariants({ variant: 'secondary' }), 'm-1 w-80 border-neutrals-gray')}
           type="email"
           placeholder="Your email"
         />
       </label>
       <label>
         <input
-          className={buttonVariants({ variant: 'secondary' })}
-          style={{ margin: '5px', borderColor: '#777B7B', color: 'black', width: '320px' }}
+          className={cn(buttonVariants({ variant: 'secondary' }), 'm-1 w-80 border-neutrals-gray')}
           type="password"
           placeholder="Password"
         />
       </label>
 
-      <Link href="/" className="pb-7 text-sm text-blue" style={{ textAlign: 'right' }}>
+      <Link href="/" className="pb-7 text-right text-sm text-blue">
         Forgot Password?
       </Link>
-      <Button className={buttonVariants({ variant: 'primary' })} style={{ margin: '5px' }}>
-        Sign in
-      </Button>
+      <Button className={cn(buttonVariants({ variant: 'primary' }), 'm-1')}>Sign in</Button>
 
       <Button
         onClick={loginWithGoogle}
         //isLoading={isLoading}
-        className={buttonVariants({ variant: 'secondary' })}
-        style={{ margin: '5px', borderColor: '#777B7B' }}
+        className={cn(buttonVariants({ variant: 'secondary' }), 'm-1 border-neutrals-gray')}
       >
         {isLoading ? null : <Icons.google className="mr-2 h-4 w-4" />}
         Sign in with Google
