@@ -13,7 +13,7 @@
     "prettier:fix": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|md|css)\"",
     "lint": "next lint",
     "prepare": "husky install",
-    "clean-local": "npx git-removed-branches --prune"
+    "clean-local": "npx git-removed-branches --prune --force"
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.7",
