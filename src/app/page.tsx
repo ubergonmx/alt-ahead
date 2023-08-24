@@ -92,14 +92,19 @@ export default function Home() {
             </div>
           </div>
           <div className="flex w-1/2 flex-col justify-center p-4">
-            <h1 className="w-[28rem] text-5xl font-extrabold leading-[1.3]">
+            <h1 className="mt-9 w-[28rem] text-5xl font-extrabold leading-[1.3]">
               Your tutor is <span className="text-blue-green">waiting for you</span>!
             </h1>
-            <p className="mt-5 w-[30rem] text-xl">
+            <p className="mt-7 w-[30rem] text-xl">
               No more browsing through endless forums and questionable referrals. Here at ALT,
               we&apos;ve already sifted through several candidates to pick only the best tutors for
               YOU.
             </p>
+            <input
+              type="text"
+              placeholder="Search for Tutor, Keyword, Subject"
+              className="mt-12 w-2/4 rounded-full border border-gray-300 px-4 py-2 focus:border-blue-400 focus:outline-none focus:ring"
+            />
           </div>
         </div>
       </section>
