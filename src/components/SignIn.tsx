@@ -5,11 +5,11 @@ import '../styles/globals.css'
 
 const SignIn = () => {
   return (
-    <div className="mx-12 flex flex-row">
+    <div className="mx-12 flex flex-row items-stretch">
       {/*image <div>*/}
-      <div className=" hidden lg:block ">
+      <div className="hidden basis-1/2 lg:block">
         <Image
-          className="rounded-l-lg lg:static lg:w-auto"
+          className="h-full w-full rounded-l-lg object-cover"
           src="/sign-in.png"
           alt="tutor"
           width={500}
@@ -18,7 +18,7 @@ const SignIn = () => {
       </div>
 
       {/*sign-in <div>*/}
-      <div className=" flex-1 rounded-r-lg bg-neutrals-light lg:static lg:w-auto">
+      <div className="flex-1 rounded-r-lg bg-neutrals-light lg:static lg:w-auto">
         <div className="container mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[400px]">
           <div className="flex flex-col space-y-2 text-center">
             <Link href="/">
