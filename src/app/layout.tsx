@@ -5,15 +5,27 @@ import { Toaster } from '@/components/ui/Toaster'
 import { cn } from '@/lib/utils'
 import { Poppins } from 'next/font/google'
 import { Metadata } from 'next'
+import { Icon } from 'next/dist/lib/metadata/types/metadata-types'
 
 const poppins = Poppins({ subsets: ['latin'], weight: '400' })
 
 export const metadata: Metadata = {
   title: 'ALT Tutors',
   description: 'Bridging the gaps between students and tutors',
-  icons: {
-    icon: '/alt-tutors-dark.png',
-  },
+  icons: [
+    {
+      rel: 'icon',
+      type: 'image/x-icon',
+      url: '/favicon.ico',
+      media: '(prefers-color-scheme: light)',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      url: '/alt-tutors-dark.png',
+      media: '(prefers-color-scheme: dark)',
+    },
+  ],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
