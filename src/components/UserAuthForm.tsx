@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils'
 import { FC, useState } from 'react'
 import { signIn } from 'next-auth/react'
 import { Icons } from './Icons'
-import { toast, useToast } from '@/hooks/use-toast'
+import { useToast } from '@/hooks/use-toast'
 import Link from 'next/link'
 
 type UserAuthFormProps = React.HTMLAttributes<HTMLDivElement>
@@ -58,7 +58,7 @@ const UserAuthForm: FC<UserAuthFormProps> = ({ className, ...props }) => {
         isLoading={isLoading}
         className={cn(buttonVariants({ variant: 'secondary' }), 'm-1 border-neutrals-gray')}
       >
-        {isLoading ?? <Icons.google className="mr-2 h-4 w-4" />}
+        {!isLoading && <Icons.google className="mr-2 h-4 w-4" />}
         Sign in with Google
       </Button>
     </div>
