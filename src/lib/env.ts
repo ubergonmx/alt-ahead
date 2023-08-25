@@ -8,4 +8,11 @@ export const envSchema = z.object({
   NEXTAUTH_SECRET: z.string().nonempty(),
 })
 
-export const env = envSchema.parse(process.env)
+export const env = (() => {
+  try {
+    return envSchema.parse(process.env)
+  } catch (error) {
+    console.error(error)
+    return process.env
+  }
+})()
