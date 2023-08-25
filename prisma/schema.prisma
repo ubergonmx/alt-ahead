@@ -71,15 +71,16 @@ model User {
   accounts      Account[]
   sessions      Session[]
 
+  // Some fields are optional (e.g. email, image) because they are not returned by all providers.
   username        String?        @unique
   // issue with NextAuth - Google data only returns 'name'
   // firstName       String         @map("first_name") @db.VarChar(50)
   // lastName        String         @map("last_name") @db.VarChar(50)
-  title           Title          @map("title")
+  title           Title?         @map("title")
   gender          Gender?        @map("gender")
   emailVerifiedAt DateTime?      @map("email_verified_at")
   password        String         @map("password") @db.VarChar(255)
-  role            Role           @map("role")
+  role            Role?          @map("role")
   deletedAt       DateTime?      @map("deleted_at")
   addresses       UsersAddress[]
   tutors          Tutor[]
