@@ -79,7 +79,7 @@ model User {
   title           Title?         @map("title")
   gender          Gender?        @map("gender")
   emailVerifiedAt DateTime?      @map("email_verified_at")
-  password        String         @map("password") @db.VarChar(255)
+  password        String?        @map("password") @db.VarChar(255)
   role            Role?          @map("role")
   deletedAt       DateTime?      @map("deleted_at")
   addresses       UsersAddress[]
