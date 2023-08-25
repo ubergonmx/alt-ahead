@@ -47,7 +47,7 @@ export const authOptions: NextAuthOptions = {
       if (!dbUser.username) {
         await db.user.update({
           where: {
-            userId: dbUser.userId,
+            id: dbUser.id,
           },
           data: {
             username: nanoid(10),
@@ -56,7 +56,7 @@ export const authOptions: NextAuthOptions = {
       }
 
       return {
-        id: dbUser.userId,
+        id: dbUser.id,
         firstName: dbUser.firstName,
         lastName: dbUser.lastName,
         email: dbUser.email,
