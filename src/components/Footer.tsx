@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { Icons } from './Icons'
 
 const currentYear = new Date().getFullYear()
 const Footer = () => {
@@ -13,9 +14,15 @@ const Footer = () => {
               Your ultimate destination for connecting students with qualified tutors
             </p>
             <div className="flex gap-4">
-              <div className="h-10 w-10 rounded-full bg-red pt-2 text-center">✔</div>
-              <div className="h-10 w-10 rounded-full bg-red pt-2 text-center">❤</div>
-              <div className="h-10 w-10 rounded-full bg-red pt-2 text-center">🤣</div>
+              <div className="flex h-10 w-10 justify-center rounded-full bg-red pt-2 text-center text-neutrals-lightest">
+                <Icons.facebook />
+              </div>
+              <div className="flex h-10 w-10 justify-center rounded-full bg-red pt-2 text-center text-neutrals-lightest">
+                <Icons.twitter />
+              </div>
+              <div className="flex h-10 w-10 justify-center rounded-full bg-red pt-2 text-center text-neutrals-lightest">
+                <Icons.youtube />
+              </div>
             </div>
           </div>
 
