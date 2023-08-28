@@ -91,7 +91,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="flex w-1/2 flex-col justify-center p-4">
+          <div className="ml-10 flex w-1/2 flex-col justify-center p-4">
             <h1 className="mt-9 w-[28rem] text-5xl font-extrabold leading-[1.3]">
               Your tutor is <span className="text-blue-green">waiting for you</span>!
             </h1>
