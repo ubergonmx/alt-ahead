@@ -9,7 +9,7 @@ export default function Home() {
           <div className="flex">
             <Image
               className="w-screen"
-              src="/home-hero.png"
+              src="/landing/section1-hero.png"
               alt={'hero'}
               width={1000}
               height={1000}
@@ -84,7 +84,7 @@ export default function Home() {
             <div>
               <Image
                 className="w-[40rem]"
-                src="/section3-girl.png"
+                src="/landing/section3-girl.png"
                 alt={'girl'}
                 width={1000}
                 height={1000}
