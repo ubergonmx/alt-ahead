@@ -2,6 +2,7 @@ import { db } from '@/lib/db'
 import { PrismaAdapter } from '@next-auth/prisma-adapter'
 import { nanoid } from 'nanoid'
 import { NextAuthOptions, getServerSession } from 'next-auth'
+import { env } from './env'
 import GoogleProvider from 'next-auth/providers/google'
 
 export const authOptions: NextAuthOptions = {
@@ -14,18 +15,18 @@ export const authOptions: NextAuthOptions = {
   },
   providers: [
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+      clientId: env.GOOGLE_CLIENT_ID,
+      clientSecret: env.GOOGLE_CLIENT_SECRET,
     }),
   ],
   callbacks: {
     async session({ token, session }) {
       if (token) {
-        // session.user.id = token.id
-        // session.user.name = token.name
-        // session.user.email = token.email
-        // session.user.image = token.picture
-        // session.user.username = token.username
+        session.user.id = token.id
+        session.user.name = token.name
+        session.user.email = token.email
+        session.user.image = token.picture
+        session.user.username = token.username
       }
 
       return session
@@ -34,7 +35,7 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token, user }) {
       const dbUser = await db.user.findFirst({
         where: {
-          email: token.email as any,
+          email: token.email!,
         },
       })
 
@@ -43,24 +44,23 @@ export const authOptions: NextAuthOptions = {
         return token
       }
 
-      // if (!dbUser.username) {
-      //   await db.user.update({
-      //     where: {
-      //       id: dbUser.id,
-      //     },
-      //     data: {
-      //       username: nanoid(10),
-      //     },
-      //   })
-      // }
+      if (!dbUser.username) {
+        await db.user.update({
+          where: {
+            id: dbUser.id,
+          },
+          data: {
+            username: nanoid(10),
+          },
+        })
+      }
 
       return {
-        id: dbUser.userId,
-        firstName: dbUser.firstName,
-        lastName: dbUser.lastName,
+        id: dbUser.id,
+        name: dbUser.name,
         email: dbUser.email,
         picture: dbUser.image,
-        // username: dbUser.username,
+        username: dbUser.username,
       }
     },
     redirect() {
